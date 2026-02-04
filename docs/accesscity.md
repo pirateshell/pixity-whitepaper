@@ -8,7 +8,10 @@ TODO: A description of what Gothenberg team is working on - its primary goals, p
 TODO: Describe the primary goals of the Accesscity system. What does it do and who does it help?
 
 ### Design
-TODO: Describe the design of Accesscity. Is it a mobile app? If so, what parts are there? Why are they there? What does the UI look like, etc.
+TODO: Describe the design of Accesscity. Is it a mobile app? If so, what parts are there? Why are they there? What does the UI look like? etc.
+
+### Implementation
+TODO: Describe any implementation details here. Who is involved? What technologies are used? How are they used? Why are they used? etc.
 
 ### AI
 TODO: Describe the AI elements involved in Accesscity. What are they? What do they do an what are they helping the user achieve? Why use them?
