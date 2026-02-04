@@ -1,1 +1,18 @@
-site_name: My Docs
+site_name: CU Gothenberg
+repo_url: https://github.com/pirateshell/pixity-whitepaper
+repo_name: GitHub Repo
+theme:
+  name: material
+  font:
+    text: Comfortaa
+  icon:
+    logo: material/home-city-outline
+  palette:
+    scheme: slate
+    primary: deep orange
+    accent: deep purple
+markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
