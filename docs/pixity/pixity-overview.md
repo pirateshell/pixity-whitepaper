@@ -1,8 +1,8 @@
 ---
-title: Pixity
+title: Pixity Overview
 ---
 # Pixity
-![Pixity high level overview](assets/pixity-diagram.svg)
+![Pixity high level overview](../assets/pixity-diagram.svg)
 
 Pixity is a serious game solution that implements the design methodology of Gamification. It consists of two parts - a board game and digital quests. The users (in this case players) play a board game that allows them to build their path through Gothenberg in an interactive way. This path ends up at a final destination, for example a Gothenberg landmark, cafe or event hall. Then the user is urged to continue their quest by actually visiting the location, where they can scan a QR code allowing them to play a digital quest that takes place in that location and allows them to learn more about it, interact socially and generally spend time at the location.
 
@@ -23,11 +23,11 @@ By doing a digital quest in a certain location, Pixity can serve as a serious ga
 
 Additionally, if these quests exist inside the Accesscity app itself, it is one more reason to get people to use it, once again allowing Pixity to be motivational in a meta sense.
 
-### TODO: Design
-Essentially a game design document for Pixity. Describe all the core elements, justifying why they are there in the way they are described. Describe user stories, UX design, interactions, narratives, including concrete examples that can help the external team build it.
+### Design
+As mentioned, Pixity consists of a board game and a digital game. The full design blueprint and details for each can be found in the the [Board game design document](board-gdd.md) and [Digital game design document](digital-gdd.md)
 
 ### TODO: Prototype
-Include a link to any prototypes. Describe briefly their implementation.
+Include a link to any prototypes. Describe their implementation.
 
 ### TODO: User evaluation
 TODO: Describe a user evaluation process & its results. Hopefully supports that Pixity is successful in what its trying to achieve.
