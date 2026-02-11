@@ -1,0 +1,1269 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../pixity-overview/">
+      
+      
+        <link rel="next" href="../digital-gdd/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Board game design document - CU Gothenberg</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Comfortaa";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#board-game-design-document" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="CU Gothenberg" class="md-header__button md-logo" aria-label="CU Gothenberg" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 2v2.26l2 1.33V4h10v15h-5v2h7V2zM7.5 5 0 10v11h15V10zM14 6v.93L15.61 8H16V6zm4 0v2h2V6zM7.5 7.5 13 11v8h-3v-6H5v6H2v-8zM18 10v2h2v-2zm0 4v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CU Gothenberg
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Board game design document
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/pirateshell/pixity-whitepaper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="CU Gothenberg" class="md-nav__button md-logo" aria-label="CU Gothenberg" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 2v2.26l2 1.33V4h10v15h-5v2h7V2zM7.5 5 0 10v11h15V10zM14 6v.93L15.61 8H16V6zm4 0v2h2V6zM7.5 7.5 13 11v8h-3v-6H5v6H2v-8zM18 10v2h2v-2zm0 4v2h2v-2z"/></svg>
+
+    </a>
+    CU Gothenberg
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/pirateshell/pixity-whitepaper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The CU Ecosystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../accesscity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accesscity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pixity
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pixity
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pixity-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Board GDD
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Board GDD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#game-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Game details
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#game-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Game overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Game overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose-of-the-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Purpose of the game
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intended-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Intended use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#justification-for-the-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Justification for the use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-audience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Target audience
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#genres" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Genre(s)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gameplay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gameplay
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gameplay">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Objectives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#game-progression-and-play-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Game Progression and Play Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mission-challenge-puzzle-etc-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Mission, challenge, puzzle, etc. structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mechanics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mechanics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mechanics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-of-the-game-universe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Model of the game universe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#character-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Character actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screen-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Screen Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-and-narratives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Story and Narratives
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Story and Narratives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backstory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Backstory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plot-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Plot elements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#game-story-progression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Game story progression
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#game-world" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Game World
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#characters-and-opponents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Characters and Opponents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Characters and Opponents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#player-avatar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Player avatar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-playable-characters-npcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Non-playable characters (NPCs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#levels-quests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Levels / Quests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Interface
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digital-gdd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digital GDD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#game-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Game details
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#game-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Game overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Game overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose-of-the-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Purpose of the game
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intended-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Intended use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#justification-for-the-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Justification for the use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-audience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Target audience
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#genres" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Genre(s)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gameplay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gameplay
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gameplay">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Objectives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#game-progression-and-play-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Game Progression and Play Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mission-challenge-puzzle-etc-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Mission, challenge, puzzle, etc. structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mechanics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mechanics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mechanics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-of-the-game-universe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Model of the game universe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#character-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Character actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screen-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Screen Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-and-narratives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Story and Narratives
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Story and Narratives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backstory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Backstory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plot-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Plot elements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#game-story-progression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Game story progression
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#game-world" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Game World
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#characters-and-opponents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Characters and Opponents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Characters and Opponents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#player-avatar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Player avatar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-playable-characters-npcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Non-playable characters (NPCs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#levels-quests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Levels / Quests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Interface
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="board-game-design-document">Board game design document</h1>
+<p>Below is a game design document for the board game part of Pixity. Its structure is primarily based on the proposed template by the University of North Carolina at Chapel Hill written by Diane Pozefsky. You can find it <a href="https://wwwx.cs.unc.edu/~pozefsky/seriousgames/NewDesignDocTemplate.pdf">here</a>.</p>
+<h3 id="game-details">Game details</h3>
+<ul>
+<li><strong>Name:</strong> Pixity</li>
+<li><strong>Tagline:</strong> TBD.</li>
+<li><strong>Team:</strong> <ul>
+<li>Mila Koeva</li>
+<li>Pirouz Nourian</li>
+<li>Filip Ivanov</li>
+<li>Reyhaneh Ghofranikajani</li>
+</ul>
+</li>
+<li><strong>Last updated:</strong> 11/02/2026</li>
+</ul>
+<h3 id="game-overview">Game overview</h3>
+<p>This is intended as a cohesive paragraph or two that lets someone understand what you are working on. Include the below elements.</p>
+<h5 id="purpose-of-the-game">🕹️ Purpose of the game</h5>
+<p>What is the primary purpose of the game outside of playing it? A serious game requires a serious goal like achieving a pedagogical objective, training goal, or intended social impact. If it is addressing a problem, explain what that problem is (for example, students have a hard time...)</p>
+<h5 id="intended-use">🕹️ Intended use</h5>
+<p>How does your game help achieve that serious goal? For example, how it is to be inserted into a pedagogical scenario or how will it be used in training, therapy, rehabilitation, etc. You should distinguish between a game that is stand alone, a supplement to another activity, etc.</p>
+<h5 id="justification-for-the-use">🕹️ Justification for the use</h5>
+<p>Is there research that shows that this is apt to be successful? Are there are other games or applications that take a similar approach? If this is an experiment to see if it will work, why does the researcher believe that it might? Essentially, why would we try this solution for the problem?</p>
+<h5 id="target-audience">🕹️ Target audience</h5>
+<p>Your target audience must be well defined. There’s a significant difference in a game teaching biology to a kindergartener or to a college student.</p>
+<h5 id="genres">🕹️ Genre(s)</h5>
+<p>The genre (or multiple genres) of your game.</p>
+<h3 id="gameplay">Gameplay</h3>
+<p>This section would tell a player what to expect. Not a lot of detail (that comes later).</p>
+<h5 id="objectives">🕹️ Objectives</h5>
+<p>What are the objectives of the game? Is it to reach a destination, retrieve the chalice, accrue the most money, or solve a puzzle in the fastest amount of time?</p>
+<h5 id="game-progression-and-play-flow">🕹️ Game Progression and Play Flow</h5>
+<p>How does the game flow for the game player? Is there an overall scoring and objective for the game or is it a progression of levels? Is it endless? Is it based around a single playthrough? What does that playthrough look like?</p>
+<h5 id="mission-challenge-puzzle-etc-structure">🕹️ Mission, challenge, puzzle, etc. structure</h5>
+<p>What are the different "beats" of the game defined? Does the player have a mission? Do they solve puzzles? Do they fight monsters? etc.</p>
+<h3 id="mechanics">Mechanics</h3>
+<p>These are topics that should be covered if relevant. All games are different and not everything applies. Consider this a checklist to help you capture all that is important. It should be complete enough that someone could build a clone of your game based on this detail.</p>
+<h5 id="rules">🕹️ Rules</h5>
+<p>Include both implicit and explicit rules that define the interactions with your game.</p>
+<h5 id="model-of-the-game-universe">🕹️ Model of the game universe</h5>
+<p>Think of it as a simulation of a world, how do all the pieces interact? If it is a puzzle game, there may be no universe to discuss, but there is the layout and the structure of the puzzle. Included in the universe are:
+    - <strong>Physics:</strong> How does the physical universe in your game work? If there are no physics, do not try to create them.
+    - <strong>Economy:</strong> What is the economy of the game? How does it work? The economy incudes the items that the player is trying to collect as well as a world economy. How does a player earn or lose these items?
+    - <strong>Other aspects:</strong> Other relevant aspects to the overall universe of the game.</p>
+<h5 id="character-actions">🕹️ Character actions</h5>
+<p>The different actions that the character can perform, such as movement, interaction with objects, combat with enemies, dialog choices, etc.</p>
+<h5 id="screen-flow">🕹️ Screen Flow</h5>
+<p>How each screen is related to every other and a description of the purpose of each screen.</p>
+<h3 id="story-and-narratives">Story and Narratives</h3>
+<p>If you have a puzzle game, there is probably no backstory or story. As soon as you add an avatar of any sort, you have a story. It may be as simple as who the character is.</p>
+<h5 id="backstory">🕹️ Backstory</h5>
+<p>If there is no plot or narrative in the story but you need to understand the background, that is a backstory. The backstory can also be setting the stage for the story that is going to unfold.</p>
+<h5 id="plot-elements">🕹️ Plot elements</h5>
+<p>There are multiple patterns of a plot: the 3-act play, the hero’s journey, episodic, … Use one of the models to describe the story of the game.</p>
+<h5 id="game-story-progression">🕹️ Game story progression</h5>
+<p>Explain how the progression of the plot is exposed to the player. Remember that there are different approaches to the narrative: how it is exposed, who is telling it and the sequence that things happen. If you are using cut scenes to progress the story, describe the cut scenes in detail.</p>
+<h3 id="game-world">Game World</h3>
+<p>Describe the general look and feel of world. Of particular importance is whether the world is broken up into different areas that are relevant to the game. If it is, describe how they are connected, how the player moves between them, and how they relate to levels.</p>
+<h3 id="characters-and-opponents">Characters and Opponents</h3>
+<h5 id="player-avatar">🕹️ Player avatar</h5>
+<p>Indicate if the user has the ability to define their own avatar and what options they are able to define.</p>
+<h5 id="non-playable-characters-npcs">🕹️ Non-playable characters (NPCs)</h5>
+<p>Identify the characters present, but not playable. Describe their backstory, personality, appearance and abilities. If there are characters that are relevant to the game but never seen, be sure to include them. Include enemies and opponents.</p>
+<h3 id="levels-quests">Levels / Quests</h3>
+<p>Provide a general description of how levels are used in the game as well as what their structure is. Identify different elements of each level, giving a synopsis of what its quest is, what is to be achieved in the level, how the player progresses through it, what they learn from it and what the ultimate end goal is.</p>
+<h3 id="user-interface">User Interface</h3>
+<p>Describe all elements that interface the game and the players. For example, how is the game controlled, how does it look (art style), how does it sound (audio and music), etc.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
